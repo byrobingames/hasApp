@@ -1,0 +1,6 @@
+name=hasApp Android only (0.06) (byRobin)
+description=hasApp detect if an app is installed or not(by name or his package).
+author=Robin Schaafsma
+website=http://www.byrobingames.com
+version=0.06
+compatibility=android

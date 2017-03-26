@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<extension>
+    
+  <section if="android">
+      
+    <classpath name="src" />
+    
+    <dependency name="hasApp" path="dependencies/hasApp" if="android" />
+    
+    <android extension="com.byrobin.hasApp.HasApp" />
+
+  </section>
+  
+</extension>
+

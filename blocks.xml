@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<palette>
+    
+    <block
+        tag="hasApp-get-Packages"
+        spec="Get all installed %0 [c:hasapp]"
+        code="HasApp.~();"
+        help="Need to call only once in your first scene ( in 'When Created' Event)"
+        type="action"
+        color="charcoal"
+        returns="void">
+        <fields>
+            <dropdown order="0">
+            <choices>
+                <c text="Packages" code="checkPackage"></c>
+                <c text="App Names" code="checkAppName"></c>
+            </choices>
+        </dropdown>
+        </fields>
+    </block>
+    
+    <block
+        tag="hasApp-getApp"
+        spec="list of all installed %0 [c:hasapp]"
+        code="HasApp.~()"
+        help="This list contains all the installed Packages/Appnames after you call 'Get all installed packages/appnames' block."
+        type="normal"
+        color="charcoal"
+        returns="list">
+        <fields>
+            <dropdown order="0">
+            <choices>
+                <c text="Packages" code="getInstalledPackage"></c>
+                <c text="App Names" code="getInstalledAppname"></c>
+            </choices>
+        </dropdown>
+        </fields>
+    </block>
+    
+</palette>
