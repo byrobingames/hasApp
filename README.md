@@ -8,7 +8,7 @@ Android target version 26 (8.0.0) or higher
 ## Blocks
 
 ***Get all installed <Packages/App Names></br>
-Use this block only ones when Games start, like in loading scene.</br?
+Use this block only ones when Games start, like in loading scene.</br>
 All installed Packages and App Names will store in a list.
 
 ***list of all installed <Packages/App Names></br>
