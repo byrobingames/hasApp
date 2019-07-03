@@ -31,64 +31,64 @@ public class HasApp extends Extension
     private static PackageManager pm;
 
     public static void checkPackage(final HaxeObject cb){
-        
+
         callback = cb;
-    
+
         mainActivity.runOnUiThread(new Runnable() {
             public void run() {
-                
+
                 pm = mainContext.getPackageManager();
                 List<ApplicationInfo> packageList = pm.getInstalledApplications(PackageManager.GET_META_DATA);
                 ArrayList<String> installedapplist = new ArrayList<String>();
-                
+
                 Iterator<ApplicationInfo> it = packageList.iterator();
                 while(it.hasNext()){
                     ApplicationInfo pk=(ApplicationInfo)it.next();
-                    
+
                     String packageName=pk.packageName.toString();
-                    
+
                     Log.d("HasApp","PackageName:" + packageName);
-                    
+
                     installedapplist.add(packageName);
-                    
+
                 }
-                
+
                 String finalPackages= installedapplist.toString();
-                
+
                 callback.call("isPackageInstalled", new Object[] {finalPackages.replace(", ", ",").replace("]", "").replace("[", "")});
             }
         });
     }
-    
+
     public static void checkAppName(final HaxeObject cb){
-        
+
         callback = cb;
-        
+
         mainActivity.runOnUiThread(new Runnable() {
             public void run() {
-                
+
                 pm = mainContext.getPackageManager();
                 List<ApplicationInfo> appList = pm.getInstalledApplications(PackageManager.GET_META_DATA);
                 ArrayList<String> installedapplist = new ArrayList<String>();
-                
+
                 Iterator<ApplicationInfo> it = appList.iterator();
                 while(it.hasNext()){
                     ApplicationInfo pk=(ApplicationInfo)it.next();
-                    
+
                     String appName = pm.getApplicationLabel(pk).toString();
-                    
-                    //Log.d("HasApp","AppName:" + appName);
-                    
+
+                    Log.d("HasApp","AppName:" + appName);
+
                     installedapplist.add(appName);
                 }
-                
+
                 String finalAppNames= installedapplist.toString();
-                
+
                 callback.call("isAppInstalled", new Object[] {finalAppNames.replace(", ", ",").replace("]", "").replace("[", "")});
-                
+
             }
         });
     }
-    
-    
+
+
 }

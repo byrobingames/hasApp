@@ -9,7 +9,11 @@ import openfl.Lib;
 #end
 
 #if android
+#if openfl_legacy
 import openfl.utils.JNI;
+#else
+import lime.system.JNI;
+#end
 #end
 
 class HasApp
@@ -38,7 +42,7 @@ class HasApp
 				args.push(new HasApp());
             	__checkpackage_android(args);
 			} catch (e:Dynamic) {
-       			trace("Could detect if an package is installed");
+       			trace("Could not detect if an package is installed");
         	}
 		
     }
